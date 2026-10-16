@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  terminaltube:
+    build: .
+    container_name: terminaltube
+    ports:
+      - "8200:80"  # ou a porta que estiver a usar
+    volumes:
+      - /home/marcelo/laboratorios/terminaltube-docker/app.py:/app/app.py
+      - terminaltube_media:/app/media
+    restart: unless-stopped
+
+volumes:
+  terminaltube_media:
